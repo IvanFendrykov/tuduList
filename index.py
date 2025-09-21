@@ -1,332 +1,232 @@
+import json
+from typing import Dict, Any
 
-# print("Hello World!")
-# print("Hello World!")
-# name = "Vanya"
-# API_KEY = "cwevwdc"
-# WIDTH, HEIGHT = 100, 200
-# apiKey = 44
-
-# print(type(name)) # str
-# print(type(apiKey)) # int
-# print(type(45.45)) # float
-
-# print(float(5))
-# print(int(5.5))
-
-# name = input("Input your Name")
-# age = int(input("Input your Age"))
-# print(name)
-# print(type(age), age) 
-
-# age = 45
-# print(type(age), age) 
-
-# name = "Ivan" + "Step"
-# newName = name * 5
-# print(newName)
-
-# a = 14
-# b = 7
-# s = 2 * (a+b)
-# print("Area", s, "sm.2")
-# print("Area " + str(s) + " sm.2")
-# print(f"Area {s} sm.2")
-
-# a = int(input("Input number"))
-# b = int(input("Input number"))
-
-
-# plus = a + b
-# minus = a - b
-# dell = a / b
-# multy = a * b
-# print(f"{plus}, {minus}, {dell}, {multy}")
-
-# text = "Python "
-# resultText = text * 3 
-# print(resultText)
-
-# name = input("Input your Name")
-# age = input("Input your Age")
-# print(f"Name: {name}, Age: {age}")
-# resultSum = (5 + 3) * 2 ** 2
-# print(resultSum)
-# print("Name: " + name +  " Age: "  + str(age))
-
-# print( True and True)
-# print( True or False)
-# age = int(input("Input your age"))
-# if(age >= 18):
-#     print("You`re Welcome!")
-# else:
-#     print("You too yanger")
-# if(age >= 18 or age <= 22):
-#     print("You`re Welcome!")
-# elif(age >= 23 or age <= 65):
-#     print("You too yanger")
-# else:
-#     print("")
-
-# userName = input("Please input your name: ")
-
-# if(userName == "student"):
-#     password = input("Please input your password: ")
-#     if(password == "1457#%78"):
-#         print("Welcome!")
-#     else:
-#         print("Your password is incorrect")
-# else:
-#         print("Your Name is not found")
-
-# 1. Пользователь вводит число n.
-# Если число делится на 3 и при этом не делится на 5, вывести "Fizz".
-# Если делится на 5 и при этом не делится на 3, вывести "Buzz".
-# Если делится и на 3, и на 5, вывести "FizzBuzz". При проверки используем остаток деление.
-# А если ни то, ни другое — вывести само число.
-
-# userNum = int(input("Please input your number "))
-# if(userNum % 3 and == 0):
-#     print(f"Fizz")
-
-# 2. Проверка высокосного года: Пользователь вводит год. Год будет высокосный если он кратно делится на 4, но при этом не делится на 100, либо если он кратно делится на 400. 
-
-# userYear = int(input("Please input your year "))
-# if(userYear % 4 == 0 and userYear % 100 != 0):
-#     print(f"This year {userYear} is spesiol")
-# elif(userYear % 400 == 0 ):
-#     print(f"This year {userYear} is spesiol")
-# else:
-#     print(f"This year {userYear} is classic")
-
-# if (userYear % 400 == 0) or (userYear % 4 == 0 and userYear % 100 != 0):
-#     print(f"This year {userYear} is special")
-# else:
-#     print(f"This year {userYear} is classic")
-
-# 3.  Треугольник существует ли?
-# Пусть заданы три стороны a, b, c.
-# Если сумма любых двух сторон строго больше третьей → треугольник существует. В противном случаи  - не существует.
-# Если условие выполняется и все стороны равны → вывести "Равносторонний".
-# Если только две стороны равны → "Равнобедренный".
-# Иначе → "Разносторонний".
-# Если треугольник не существует → вывести "Это не треугольник".
+DATA_FILE = "task.json"
+Task = Dict[str, Any]
 
+PRIORITY = {1: "low", 2: "medium", 3: "high"}
+PRIORITY_ORDER = {"low": 1, "medium": 2, "high": 3}
 
-# 4. Магазин скидок
-# Покупатель вводит сумму покупки.
-# Если сумма больше 10 000 крон и день недели "суббота" или "воскресенье" → скидка 20%.
-# Если сумма больше 5 000 и день рабочий → скидка 10%.
-# Если сумма меньше или равна 1 000 → скидки нет.
-# Вывести итоговую цену с учётом скидки. День недели можна ввести в ручную пользователем.
+STATUS = {1: "new", 2: "in progress", 3: "done"}
+STATUS_ORDER = {"new": 1, "in progress": 2, "done": 3}
 
-# userMoney = int(input("Please input your total sum:  "))
-# day = int(input("Input day 1-7: "))
-
-# if(userMoney > 10000 and day in (6,7)):
-#     totalSum = userMoney * 0.8
-#     print(f"You have discount 20%, your price {totalSum}")
-
-# elif(5000 <= userMoney < 10000 and day in (1,2,3,4,5)):
-#     totalSum = userMoney * 0.9
-#     print(f"You have discount 10%, your price {totalSum}")
-
-# else:
-#     print(f"You don`t have any discount, your price {userMoney}")
-
-# a = 8
-# b = 5
-# print( not a == b)
-
-
-# a = 50000000
-# b = 50000000
-# print(a is b)
-
-# erroe_massege = 400
-# match erroe_massege:
-#     case 400:
-#         print("Bad request")
-#     case 401:
-#         print("Unaothorized")
-#     case 402:
-#         print("Not Found")
-
-# value  = "Alex"
-# match value:
-#     case str():
-#         print("This is string")
-#     case int():
-#         print("This is number")
-
-# point = (3, 4)
-# match point:
-#     case (0, 0):
-#         print("You in start position")
-#     case (x, 0):
-#         print("You are going on horizont")
-#     case (0, y):
-#         print("You are going on vertikal")
-#     case (x, y):
-#         print(f"Your vay x: {x}, y: {y}")
-
-# num = 22
-
-# match num:
-#     case n if n % 2 == 0:
-#         print(" Not even")
-#     case n if n % 2 != 0:
-#         print(" Not even")
-    
-# str1 = 15
-# print(id(str1))
-# str1 = 15.1 
-# print(id(str1))
-
-
-fruits = ["orange", "apple", "banan", "pineapple"]
-
-
-# print(len(fruits))
-
-
-# fruits.append("potatoes")
-# print(fruits)
-
-# del fruits[2]
-# print(fruits)
-
-# # fruits.clear()
-# # print(fruits)
-
-# fruits2 = fruits.copy()
-# print(fruits2)
-
-list_num = [45,14,45,52,1,45]
-# print(list_num.count(45))
-
-
-# fruits.extend(list_num)
-# print(fruits)
-
-# print(fruits.index(45))
-
-# fruits.insert(1, "Good")
-# print(fruits)
-# fruits.pop(1)
-# print(fruits)
-
-# fruits.remove("banan")
-# print(fruits)
-# fruits.reverse()
-# print(fruits)
-# fruits.sort()
-# print(fruits)
-
-string = "Hello world!"
-# print(len(string))
-# print(string[1])
-# print(string.upper())
-# print(string.lower())
-# print(string.strip())
-# print(string.split(" "))
-# print(string.replace("world","people"))
-# print(string.find("o"))
-# print(string.index("o"))
-# print(string.count("l"))
-# print(string.startswith("Hel"))
-# print(string.startswith("el"))
-# print(string.endswith("ld!"))
-# print(string.endswith("el"))
-# newstring = ", ".join(fruits)
-# print(newstring)
-# name = "Alex"
-# age = 35
-# print("Hello, {}! your are {} years old".format(name, age))
-# print(f"Hello, {name}! your are {age} years old")
-
-# print(fruits[-1])
-# print(string[2:-3])
-# print(string[::3])
-# print(string[:])
-
-# for el in fruits:
-    # print(el)
-# newlist = []
-# for num in list_num:
-#     if( num == 45):
-#         i = list_num.index(num)
-#         newlist.append(i)
-#         # print(f"Number {num}")
-# index = 0
-
-# for el in list1:
-#     if el == 45:
-#         print(f"Число 45 в списке занимает позицию {index}")
-#     index += 1
-
-list1 = [0,45, 14, 47, 78, 45, 45]
-# newlist = []
-# start = 0
-
-# for num in list1:
-#     if num == 45:
-#         i = list1.index(num, start) 
-#         newlist.append(i)
-#         start = i + 1
-
-# print(newlist)
-
-# print(newlist)
-
-# a = 500
-# b = 500
-# print(a is b)
-
-# for el in range(len(list1)):
-#     if list1[el] == 45 :
-#         print(f"{el}")
-# list2 = list(range(0,10,2)) # start stop step
-# list2 = list(range(0,10)) # start stop
-# list2 = list(range(10)) # stop
-# print(list2)
-
-# a = range(45, 85)
-# print(a[5])
-
-# for el, num in enumerate(list1):
-#     if num == 45 :
-#         print(f"{el}")
-
-# count = 0
-# while count < 5:
-#     print(count)
-#     count += 1
-
-# count = 1
-# while count > 0:
-#     if count == 10:
-#         break
-#     print(count)
-#     count += 1
-# import getpass
-# password = ""
-# while password != "password":
-#     # password = input("Input password, or input exit")
-#     password = getpass.getpass("Input password, or input exit")
-#     if password == "password":
-#         print("ok")
-
-#     if password == "exit":
-#         print("Stop")
-#         break
-
-# text = "Hello Academy Step!"
-# for char in text:
-#     if char == "d":
-#         break
-#     print(char)
-
-# for char in text:
-#     if char == "a":
-#         continue
-#     print(char)
+
+def load_task() -> Dict[str, Task]:
+    try:
+
+        with open(DATA_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            return data
+        else:
+            return {}
+    except FileNotFoundError:
+        return {}
+
+
+def save_task(tasks: Dict[str, Task]) -> None:
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(tasks, f, ensure_ascii=False, indent=2)
+
+
+def new_id(tasks: Dict[str, Task]) -> Any:
+    if not tasks:
+        return 1
+
+    return str(max(int(k) for k in tasks.keys()) + 1)
+
+
+def ask_int(prompt: str, *, min_v: int | None = None, max_v: int | None = None) -> int:
+    while True:
+        raw = input(prompt).strip()
+        if raw == "":
+            print("Input number: ")
+            continue
+        try:
+            val = int(raw)
+            if min_v is not None and val < min_v:
+                print(f"Number can`t be less then {min_v}")
+                continue
+            if max_v is not None and val > max_v:
+                print(f"Number can`t be a bit then {max_v}")
+                continue
+            return val
+        except ValueError:
+            print("It`s must be number")
+
+
+def ask_user(prompt: str) -> str:
+    while True:
+        s = input(prompt).strip()
+        if s:
+            return s
+        print("Can`t be empty")
+
+
+def priority() -> str:
+    print("Choose priority: 1 - low, 2 - middle, 3 - hight")
+    p = ask_int("Your chose: ", min_v=1, max_v=3)
+    return PRIORITY[p]
+
+
+def status() -> str:
+    print("Choose status: 1 - new, 2 - in process, 3 - done")
+    s = ask_int("Your chose: ", min_v=1, max_v=3)
+    return STATUS[s]
+
+
+def print_task(task_id: str, task: Task) -> None:
+    print(f" #{task_id}")
+    print(f"   Title      : {task["title"]}")
+    print(f"   Description: {task["desc"]}")
+    print(f"   Priority   : {task["priority"]}")
+    print(f"   Status     : {task["status"]}")
+
+
+def create_task(tasks: Dict[str, Task]) -> None:
+    title = ask_user("Input title the task: ")
+    desc = ask_user("Input description the task: ")
+    prior = priority()
+    stat = status()
+    tid = new_id(tasks)
+
+    tasks[tid] = {"title": title, "desc": desc, "priority": prior, "status": stat}
+    save_task(tasks)
+    print("Task was create.")
+
+
+def vie_task(tasks: Dict[str, Task]) -> None:
+    if not tasks:
+        print("You don`t have tasks.")
+        return
+
+    while True:
+        print("\nShow Tasks:")
+        print("1 - show all tasks.")
+        print("2 - show sorted task(priority).")
+        print("3 - show sorted task(status).")
+        print("4 - show task for input.")
+        print("0 - exit.")
+        choise = ask_int("Choose number: ", min_v=0, max_v=4)
+
+        match choise:
+            case 0:
+                return
+            case 1:
+                for tid, t in tasks.items():
+                    print_task(tid, t)
+            case 2:
+                items = sorted(
+                    tasks.items(),
+                    key=lambda k: (PRIORITY_ORDER.get(k[1]["priority"], 99), int(k[0])),
+                )
+                for tid, t in items:
+                    print_task(tid, t)
+            case 3:
+                items = sorted(
+                    tasks.items(),
+                    key=lambda k: (STATUS_ORDER.get(k[1]["status"], 99), int(k[0])),
+                )
+                for tid, t in items:
+                    print_task(tid, t)
+            case 4:
+                user_input = ask_user("Input search param...").lower()
+                found = [
+                    (tid, t)
+                    for tid, t in tasks.items()
+                    if user_input in t["title"].lower()
+                    or user_input in t["desc"].lower()
+                ]
+                if not found:
+                    print("Any task")
+                else:
+                    for tid, t in found:
+                        print_task(tid, t)
+
+
+def update_task(tasks: Dict[str, Task]) -> None:
+    if not tasks:
+        print("Nothing to change")
+        return
+    tid = ask_user("Input your task id: ")
+    if tid not in tasks:
+        print(f"You don`t have a task with this id {tid}")
+        return
+
+    t = tasks[tid]
+    while True:
+        print("\nWhat do you want to change: ")
+        print("1 - Change title")
+        print("2 - Change descriptions")
+        print("3 - Change priority")
+        print("4 - Change status")
+        print("0 - save and exit")
+
+        user_input = ask_int("Choose", min_v=0, max_v=4)
+
+        match user_input:
+            case 0:
+                save_task(tasks)
+                print("Task changed and saved")
+                return
+            case 1:
+                t["title"] = ask_user("New title: ")
+            case 2:
+                t["desc"] = ask_user("New description: ")
+            case 3:
+                t["priority"] = priority()
+            case 4:
+                t["status"] = status()
+
+
+def delete_task(tasks: Dict[str, Task]) -> None:
+    if not tasks:
+        print("Anything to delete")
+        return
+
+    tid = ask_user("Input your task id: ")
+
+    if tid not in tasks:
+        print(f"You don`t have task with this id {tid}")
+        return
+
+    confirm = ask_user("You are relly want to delete task: y/n ?").lower()
+
+    if confirm == "y":
+        tasks.pop(tid)
+        save_task(tasks)
+        print("Delete!")
+
+    else:
+        print("Canseled")
+
+
+def main() -> None:
+    tasks = load_task()
+    print("\nTudu list")
+    while True:
+
+        print("\nMenu:")
+        print("1 - Create new task")
+        print("2 - Show your tasks")
+        print("3 - Update task")
+        print("4 - Delete task")
+        print("0 - Exit")
+        user_chose = ask_int("Coose options:", min_v=0, max_v=4)
+
+        match user_chose:
+            case 0:
+                print("Bye.")
+                break
+            case 1:
+                create_task(tasks)
+            case 2:
+                vie_task(tasks)
+            case 3:
+                update_task(tasks)
+            case 4:
+                delete_task(tasks)
+
+
+if __name__ == "__main__":
+    main()
