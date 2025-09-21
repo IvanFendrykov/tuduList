@@ -228,5 +228,4 @@ def main() -> None:
                 delete_task(tasks)
 
 
-if __name__ == "__main__":
-    main()
+main()
